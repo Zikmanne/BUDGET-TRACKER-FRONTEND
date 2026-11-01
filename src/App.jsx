@@ -1,28 +1,16 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./components/Layout";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import Categories from "./pages/Categories";
-import Home from "./pages/Home";
-import CreatePlan from "./pages/budget/CreatePlan";
-import ExpenseReport from "./pages/ExpenseReports";
-import './App.css'
+// import { useState } from 'react'
+// import heroImg from './assets/hero.png'
+// import reactLogo from './assets/react.svg'
+// import viteLogo from './assets/vite.svg'
+// import './App.css'
 
+// function App() {
 
-export default function App() {
-  return (
-      <BrowserRouter>
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/categories" element={<Categories />} />
+//   return (
+//     <>
 
-          <Route element={<Layout />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/create-plan" element={<CreatePlan />} />
-            <Route path="/expense-report" element={<ExpenseReport />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-  );
-}
+//     </>
+//   )
+// }
+
+// export default App
