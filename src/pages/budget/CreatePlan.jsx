@@ -122,7 +122,7 @@ export default function CreatePlan() {
     <div className="plan-page">
       <header className="plan-header">
         <h1>Create plan</h1>
-        <p>Decide where this month&rsquo;s income goes before you spend it.</p>
+        <p>Decide where this month's income goes before you spend it.</p>
       </header>
 
       {/* Hero summary */}
@@ -150,6 +150,7 @@ export default function CreatePlan() {
             }}
           />
         </div>
+
 
         <div
           className={`alloc-bar ${isOver ? "is-over" : ""}`}
