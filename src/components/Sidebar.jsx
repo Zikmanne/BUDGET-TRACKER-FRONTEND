@@ -11,7 +11,7 @@ export default function Sidebar() {
           Home
         </NavLink>
 
-        <NavLink to="/home" className="sidebar-link">
+        <NavLink to="/create-plan" className="sidebar-link">
           Create plan
         </NavLink>
 

@@ -1,0 +1,561 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+/* Design tokens from the product doc */
+.plan-page {
+  --bg: #ffffff;
+  --text: #0a0a0a;
+  --muted: #79797f;
+  --divider: #ebebee;
+  --panel: #f7f7f9;
+  --accent: #e3142f;
+  --accent-soft: #ff6b7d; /* red on dark surfaces */
+
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 40px 20px 32px;
+  background: var(--bg);
+  color: var(--text);
+  text-align: left; /* overrides the centred default from the Vite template */
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.4;
+}
+
+.plan-page *,
+.plan-page *::before,
+.plan-page *::after {
+  box-sizing: border-box;
+}
+
+/* ---------- Header ---------- */
+.plan-header {
+  margin-bottom: 28px;
+}
+
+.plan-page .plan-header h1 {
+  margin: 0 0 6px;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+
+.plan-page .plan-header p {
+  margin: 0;
+  font-size: 16px;
+  color: var(--muted);
+}
+
+/* ---------- Hero card ---------- */
+.plan-hero {
+  background: var(--text);
+  color: #ffffff;
+  border-radius: 28px;
+  padding: 28px;
+}
+
+.hero-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.hero-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #c9c9ce;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  height: 28px;
+  padding: 0 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.pill-neutral {
+  background: #1f1f23;
+  color: #c9c9ce;
+}
+
+.pill-done {
+  background: #ffffff;
+  color: var(--text);
+}
+
+.pill-over {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.income-field {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 10px 0 22px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #2c2c30;
+}
+
+.income-field:focus-within {
+  border-bottom-color: #ffffff;
+}
+
+.income-field span {
+  font-size: 32px;
+  font-weight: 600;
+  color: #79797f;
+}
+
+.plan-page .income-field input {
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #ffffff;
+  font: inherit;
+  font-size: 46px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.income-field input::placeholder {
+  color: #4a4a50;
+}
+
+/* Allocation bar */
+.alloc-bar {
+  display: flex;
+  height: 12px;
+  border-radius: 999px;
+  background: #1f1f23;
+  overflow: hidden;
+  gap: 2px;
+}
+
+.alloc-bar span {
+  display: block;
+  height: 100%;
+  transition: width 0.25s ease;
+}
+
+.alloc-bar.is-over {
+  background: var(--accent);
+}
+
+/* Stats */
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 22px 0 0;
+}
+
+.stat dt {
+  margin-bottom: 4px;
+  font-size: 13px;
+  color: #a0a0a6;
+}
+
+.stat dd {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.stat dd.is-over {
+  color: var(--accent-soft);
+}
+
+.hero-note {
+  margin: 18px 0 0;
+  font-size: 14px;
+  color: #a0a0a6;
+}
+
+.hero-note.is-over {
+  color: var(--accent-soft);
+  font-weight: 600;
+}
+
+/* ---------- Categories panel ---------- */
+.plan-panel {
+  margin-top: 24px;
+  padding: 24px;
+  border: 1px solid var(--divider);
+  border-radius: 28px;
+  background: var(--bg);
+}
+
+.panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.plan-page .panel-head h2 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.count {
+  display: inline-grid;
+  place-items: center;
+  min-width: 26px;
+  height: 26px;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: var(--panel);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.plan-empty {
+  margin: 0;
+  padding: 24px 0;
+  text-align: center;
+  color: var(--muted);
+}
+
+.cat-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.cat-card {
+  display: grid;
+  grid-template-columns: 44px 1fr 220px 40px;
+  grid-template-areas:
+    "avatar name money del"
+    ".      meter meter meter";
+  align-items: center;
+  column-gap: 14px;
+  row-gap: 12px;
+  padding: 16px;
+  border: 1px solid var(--divider);
+  border-radius: 20px;
+  background: var(--bg);
+  transition: border-color 0.15s ease;
+}
+
+.cat-card:hover {
+  border-color: #cfcfd5;
+}
+
+.cat-avatar {
+  grid-area: avatar;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--panel);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.plan-page .cat-name {
+  grid-area: name;
+  min-width: 0;
+  height: 44px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.cat-name::placeholder {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.money-box {
+  grid-area: money;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 48px;
+  padding: 0 14px;
+  border: 1px solid var(--divider);
+  border-radius: 14px;
+  background: var(--panel);
+}
+
+.money-box span {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.plan-page .money-box input {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: right;
+}
+
+.money-box input::placeholder {
+  color: #b4b4ba;
+  font-weight: 500;
+}
+
+.money-box:focus-within {
+  border-color: var(--text);
+  background: var(--bg);
+}
+
+/* Hide number spinners */
+.plan-page input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+.plan-page input[type="number"]::-webkit-outer-spin-button,
+.plan-page input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.cat-meter {
+  grid-area: meter;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.meter-track {
+  flex: 1;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--divider);
+  overflow: hidden;
+}
+
+.meter-track span {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--text);
+  transition: width 0.25s ease;
+}
+
+.share-pill {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--panel);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+/* ---------- Buttons ---------- */
+.plan-page .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 14px;
+  background: var(--accent);
+  color: #ffffff;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.plan-page .btn-primary:hover:not(:disabled) {
+  background: #c8112a;
+}
+
+.plan-page .btn-primary:disabled {
+  background: var(--divider);
+  color: var(--muted);
+  cursor: not-allowed;
+}
+
+.plan-page .btn-lg {
+  height: 52px;
+  padding: 0 32px;
+  font-size: 16px;
+}
+
+.plan-page .btn-icon {
+  grid-area: del;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.plan-page .btn-icon:hover {
+  background: var(--panel);
+  color: var(--accent);
+}
+
+.plan-page .btn-primary:focus-visible,
+.plan-page .btn-icon:focus-visible,
+.plan-page .cat-name:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+/* ---------- Sticky action bar ---------- */
+.plan-bar {
+  position: sticky;
+  bottom: 16px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 24px;
+  padding: 14px 14px 14px 22px;
+  border: 1px solid var(--divider);
+  border-radius: 22px;
+  background: var(--bg);
+  box-shadow: 0 10px 30px rgba(10, 10, 10, 0.1);
+}
+
+.bar-figure {
+  display: flex;
+  flex-direction: column;
+}
+
+.bar-figure span {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.bar-figure strong {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.bar-figure strong.is-over {
+  color: var(--accent);
+}
+
+.bar-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.bar-hint {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.bar-saved {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 640px) {
+  .plan-page {
+    padding: 24px 16px 16px;
+  }
+
+  .plan-page .plan-header h1 {
+    font-size: 26px;
+  }
+
+  .plan-hero {
+    padding: 22px;
+    border-radius: 24px;
+  }
+
+  .plan-page .income-field input {
+    font-size: 36px;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stat:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .plan-panel {
+    padding: 18px;
+    border-radius: 24px;
+  }
+
+  .cat-card {
+    grid-template-columns: 44px 1fr 40px;
+    grid-template-areas:
+      "avatar name del"
+      "money  money money"
+      "meter  meter meter";
+  }
+
+  .plan-bar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 16px;
+  }
+
+  .bar-actions {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .plan-page .btn-lg {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .alloc-bar span,
+  .meter-track span,
+  .cat-card,
+  .plan-page .btn-primary,
+  .plan-page .btn-icon {
+    transition: none;
+  }
+}

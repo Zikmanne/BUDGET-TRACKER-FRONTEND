@@ -4,7 +4,7 @@ import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 // import Categories from "./pages/onboarding/Categories";
 import Home from "./pages/dashboard/Home";
-// import CreatePlan from "./pages/budget/CreatePlan";
+import CreatePlan from "./pages/budget/CreatePlan";
 import ExpenseReport from "./pages/reports/ExpenseReport";
 
 
@@ -18,7 +18,7 @@ export default function App() {
 
         <Route element={<Layout />}>
           <Route path="/home" element={<Home />} />
-          {/* <Route path="/create-plan" element={<CreatePlan />} /> */}
+          <Route path="/create-plan" element={<CreatePlan />} />
           <Route path="/expense-report" element={<ExpenseReport />} />
         </Route>
 
