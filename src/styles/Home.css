@@ -1,0 +1,168 @@
+.dash-summary {
+  background: #1e293b;
+  color: #ffffff;
+  border-radius: 24px;
+  padding: 32px;
+  margin: 20px 0;
+}
+
+.dash-summary-label {
+  margin: 0;
+  color: #9ca3af;
+  font-size: 16px;
+}
+
+.dash-summary-amount {
+  margin: 8px 0 24px;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.dash-summary-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #262626;
+}
+
+.dash-stat-value {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.dash-stat-label {
+  margin-top: 4px;
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.dash-grid {
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr) minmax(0, 1.6fr);
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .dash-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dash-panel {
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.12);
+  padding: 20px 24px;
+}
+
+.dash-panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.dash-panel-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.dash-panel-meta {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.dash-panel-meta strong {
+  margin-left: 6px;
+  color: #0f172a;
+}
+
+.dash-view-all {
+  color: #dc2626;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.dash-view-all:hover {
+  text-decoration: underline;
+}
+
+.dash-pie {
+  height: 300px;
+}
+
+.dash-key {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 24px;
+  margin-top: 20px;
+}
+
+.dash-key-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+}
+
+.dash-key-box {
+  width: 18px;
+  height: 18px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.dash-key-name {
+  flex: 1;
+}
+
+.dash-key-value {
+  color: #475569;
+  font-size: 14px;
+}
+
+.dash-table-wrap {
+  overflow-x: auto;
+}
+
+.dash-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dash-table th {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #1e293b;
+  padding: 16px 10px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.dash-table td {
+  text-align: center;
+  font-size: 14px;
+  color: #64748b;
+  padding: 16px 10px;
+  border-bottom: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+.dash-type {
+  font-weight: 700;
+}
+
+.dash-table .dash-in {
+  color: #16a34a;
+}
+
+.dash-table .dash-out {
+  color: #dc2626;
+}
