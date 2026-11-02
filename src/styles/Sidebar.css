@@ -1,0 +1,97 @@
+.layout {
+  display: flex;
+  background-color: red;
+  min-height: 100vh;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  background: #1a1f26;
+  color: white;
+  padding: 24px 16px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+/* ---------- Logo ---------- */
+.auth-logo-mark {
+  display: block;
+  margin: 0 0 20px 8px;
+}
+
+.auth-logo-mark img {
+  display: block;
+  width: 100%;
+  max-width: 195px;
+  height: auto;
+}
+
+.sidebar-title {
+  font-size: 20px;
+  margin: 0 0 24px 8px;
+}
+
+/* ---------- Links ---------- */
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sidebar-link {
+  color: #cbd5e1;
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 6px;
+  text-align: left;
+}
+
+.sidebar-link:hover {
+  background: black;
+  color: white;
+}
+
+.sidebar-link.active {
+  background: black;
+  color: white;
+}
+
+/* ---------- Page content ---------- */
+.content {
+  flex: 1;
+  padding: 24px;
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.content h1 {
+  color: #0f172a;
+  font-size: 28px;
+  margin: 0 0 16px 0;
+}
+
+/* ---------- Sign out ---------- */
+.sidebar-footer {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid #334155;
+}
+
+.logout-btn {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px;
+  color: #fca5a5;
+  border: 1px solid #475569;
+  border-radius: 6px;
+}
+
+.logout-btn:hover {
+  background: #334155;
+}

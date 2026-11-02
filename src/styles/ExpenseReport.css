@@ -1,0 +1,247 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: #f6f6f8;
+  color: #0f0f12;
+}
+
+h1 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+h2 {
+  margin: 0 0 16px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.muted {
+  margin: 4px 0 24px;
+  font-size: 15px;
+  color: #6b7280;
+}
+
+/* ---------- Toolbar (month + download buttons) ---------- */
+.report-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.field.inline {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.field select {
+  height: 46px;
+  min-width: 200px;
+  padding: 0 14px;
+  font-family: inherit;
+  font-size: 15px;
+  color: #0f0f12;
+  background: #e8effb;
+  border: 1px solid #d8dce3;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+}
+
+.field select:focus {
+  border-color: #e4122f;
+  box-shadow: 0 0 0 3px rgba(228, 18, 47, 0.15);
+}
+
+.download-group {
+  display: flex;
+  gap: 12px;
+}
+
+.primary-btn,
+.outline-btn {
+  height: 46px;
+  padding: 0 22px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.primary-btn {
+  color: #ffffff;
+  background: #e4122f;
+  border: 1px solid #e4122f;
+}
+
+.primary-btn:hover {
+  background: #c40f28;
+  border-color: #c40f28;
+}
+
+.outline-btn {
+  color: #e4122f;
+  background: #ffffff;
+  border: 1px solid #e4122f;
+}
+
+.outline-btn:hover {
+  background: #fde8eb;
+}
+
+/* ---------- Summary cards ---------- */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 24px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(15, 15, 18, 0.06);
+}
+
+.card-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.card-value {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.card-value.green {
+  color: #16a34a;
+}
+
+.card-value.red {
+  color: #e4122f;
+}
+
+/* ---------- Table panel ---------- */
+.panel {
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(15, 15, 18, 0.06);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  padding: 12px 8px;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
+  color: #6b7280;
+  border-bottom: 1px solid #e8eaee;
+}
+
+td {
+  padding: 16px 8px;
+  font-size: 15px;
+  border-bottom: 1px solid #e8eaee;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.right {
+  text-align: right;
+}
+
+/* ---------- Status tags ---------- */
+.tag {
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 999px;
+}
+
+.tag-green {
+  color: #16a34a;
+  background: #e3f6ea;
+}
+
+.tag-red {
+  color: #e4122f;
+  background: #fde8eb;
+}
+
+/* ---------- Print (used by "Download PDF") ---------- */
+.print-only {
+  display: none;
+}
+
+@media print {
+  body {
+    padding: 0;
+    background: #ffffff;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block;
+  }
+
+  .print-title {
+    margin: 0 0 16px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .card,
+  .panel {
+    box-shadow: none;
+    border: 1px solid #e8eaee;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 700px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .download-group {
+    width: 100%;
+  }
+
+  .download-group button {
+    flex: 1;
+  }
+}

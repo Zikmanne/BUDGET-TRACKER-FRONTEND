@@ -1,0 +1,322 @@
+/* ==================================================================
+   Login.css
+   Classes start with "auth-" because Register will reuse them.
+   (In Vite, any CSS file you import applies to the whole app, so a
+   shared prefix keeps our names from clashing with other pages.)
+   ================================================================== */
+
+.auth-page {
+  /* Colours live here once, so changing the brand colour is a one-line job */
+  --auth-ink: #0a0a0a;
+  --auth-muted: #79797f;
+  --auth-line: #ddddE2;
+  --auth-soft: #ebebee;
+  --auth-bg: #f7f7f9;
+  --auth-card: #ffffff;
+  --auth-red: #e3142f;
+  --auth-red-dark: #c40f27;
+  --auth-red-light: #f6a3ad; /* the "disabled" red */
+  --auth-red-wash: #fce8ea;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 32px 16px;
+  background: var(--auth-bg);
+  color: var(--auth-ink);
+  font-family: 'Inter', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.auth-page *,
+.auth-page *::before,
+.auth-page *::after {
+  box-sizing: border-box;
+}
+
+/* ---------- Brand above the card ---------- */
+.auth-brand {
+  display: flex;
+  width: 220px;
+  align-items: center;
+  /* gap: 10px; */
+}
+
+.auth-logo-mark {
+  display: grid;
+  place-items: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 0px;
+  /* background: var(--auth-red); */
+  color: #fff;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.auth-logo-mark img{
+  width: 220px;
+}
+
+
+.auth-brand-name {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+}
+
+.auth-brand-name h1{
+font-style: "Manrope", san-serif;
+}
+/* ---------- The card ---------- */
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+  background: var(--auth-card);
+  border: 1px solid var(--auth-soft);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(10, 10, 10, 0.06);
+  overflow: hidden;
+}
+
+.auth-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--auth-soft);
+}
+
+.auth-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* ---------- "Stay signed in" switch ---------- */
+.auth-switch {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+.auth-switch-label {
+  font-size: 14px;
+  color: var(--auth-muted);
+}
+
+/* The real checkbox is hidden; the track + knob below is what people see */
+.auth-switch input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  cursor: pointer;
+}
+
+.auth-switch-track {
+  position: relative;
+  width: 44px;
+  height: 26px;
+  border-radius: 999px;
+  background: var(--auth-line);
+  transition: background 0.2s ease;
+}
+
+.auth-switch-track::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease;
+}
+
+.auth-switch input:checked + .auth-switch-track {
+  background: var(--auth-red);
+}
+
+.auth-switch input:checked + .auth-switch-track::after {
+  transform: translateX(18px);
+}
+
+.auth-switch input:focus-visible + .auth-switch-track {
+  outline: 2px solid var(--auth-ink);
+  outline-offset: 2px;
+}
+
+/* ---------- Form ---------- */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px 24px 8px;
+}
+
+.auth-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.auth-field label {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.auth-field-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.auth-input-wrap {
+  position: relative;
+}
+
+.auth-input {
+  width: 100%;
+  height: 50px;
+  padding: 0 16px;
+  border: 1px solid var(--auth-line);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--auth-ink);
+  font-family: inherit;
+  font-size: 16px; /* 16px stops phones from zooming in when typing */
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.auth-input::placeholder {
+  color: #a9a9b0;
+}
+
+.auth-input:focus {
+  outline: none;
+  border-color: var(--auth-red);
+  box-shadow: 0 0 0 3px var(--auth-red-wash);
+}
+
+/* Leave room on the right for the eye button */
+.auth-input-wrap .auth-input {
+  padding-right: 48px;
+}
+
+.auth-eye {
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--auth-muted);
+  cursor: pointer;
+}
+
+.auth-eye:hover {
+  color: var(--auth-ink);
+}
+
+.auth-eye:focus-visible {
+  outline: 2px solid var(--auth-ink);
+}
+
+/* ---------- Button ---------- */
+.auth-button {
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  background: var(--auth-red);
+  color: #fff;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.auth-button:hover:not(:disabled) {
+  background: var(--auth-red-dark);
+}
+
+.auth-button:disabled {
+  background: var(--auth-red-light);
+  cursor: not-allowed;
+}
+
+.auth-button:focus-visible {
+  outline: 2px solid var(--auth-ink);
+  outline-offset: 2px;
+}
+
+/* ---------- Error message ---------- */
+.auth-error {
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: var(--auth-red-wash);
+  color: var(--auth-red-dark);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* ---------- Links ---------- */
+.auth-link {
+  color: var(--auth-red);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+}
+
+.auth-link-small {
+  font-size: 14px;
+}
+
+.auth-switch-page {
+  margin: 0;
+  padding: 16px 24px 24px;
+  text-align: center;
+  font-size: 15px;
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 480px) {
+  .auth-page {  
+    justify-content: flex-start;
+    padding-top: 40px;
+  }
+
+  .auth-card-header,
+  .auth-form,
+  .auth-switch-page {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auth-switch-track,
+  .auth-switch-track::after,
+  .auth-input,
+  .auth-button {
+    transition: none;
+  }
+}

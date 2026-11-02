@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import "../styles/Home.css";
+import '../../styles/Home.css';
+
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
 
 const income = 250000;
